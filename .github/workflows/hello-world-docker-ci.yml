@@ -1,0 +1,21 @@
+name: Hello World Docker
+on:
+  push:
+    paths:
+      - 'hello-world-docker-action/**'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  rdm-ame:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to local
+        uses: actions/checkout@v4
+      - name: Run my own action
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: 'Myself'
+        
+    
