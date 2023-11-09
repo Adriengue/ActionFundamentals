@@ -16,6 +16,10 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "${{github.event_name}}"'
-      - run: 'echo "${{ github.ref }}"'
-      - run: 'echo "The repository ${{ github.repository }} contains the following files: " ls .
+      - run: |
+          echo "${{ github.event_name }}"
+      - run: |
+          echo "${{ github.ref }}"
+      - run: |
+          echo "The repository ${{ github.repository }} contains the following files: " 
+          ls .
